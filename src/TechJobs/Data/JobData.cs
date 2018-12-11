@@ -99,7 +99,7 @@ namespace TechJobs.Data
                           where j.ID == id
                           select j;
 
-            return results.Single();
+            return results.SingleOrDefault();
         }
 
     }

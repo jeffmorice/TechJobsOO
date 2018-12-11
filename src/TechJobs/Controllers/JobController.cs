@@ -20,9 +20,17 @@ namespace TechJobs.Controllers
         public IActionResult Index(int id)
         {
             // TODO #1 - get the Job with the given ID and pass it into the view
+            // redirect if value is null
             Job foundJob = jobData.Find(id);
 
-            return View(foundJob);
+            if (foundJob != null)
+            {
+                return View(foundJob);
+            }
+            else
+            {
+                return Redirect("/");
+            }
         }
 
         public IActionResult New()
